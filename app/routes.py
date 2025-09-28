@@ -1,18 +1,18 @@
-from flask import Blueprint, request
+from flask import Blueprint, render_template
 import logging
-import datetime
+
+from services.github import get_github_builds
+from services.jenkins import get_jenkins_builds
 
 
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
-def home():
+def dashboard():
     try: 
-        timestamp = datetime.datetime.now().isoformat()
-        client_ip = request.remote_addr
-        message = f"Hello, you are IP {client_ip}"
-        logging.info(message)
-        return f"Hello, {message}"
+        github_data = get_github_builds()
+        jenkins_data = get_jenkins_builds()
+        return render_template("dashboard.html", github=github_data, jenkins=jenkins_data)
     except Exception as e:
         logging.exception(f"Error handling request: {e}")
         return "An error occurred while processing your request", 500
