@@ -36,7 +36,7 @@ cd test-automation-framework
 python main.py
 
 # Build Docker image
-docker build -t gswack/test-automation-framework
+docker build -t gswack/test-automation-framework .
 
 # Run container locally
 docker run -p 5000:5000 gswack/test-automation-framework
