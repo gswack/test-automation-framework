@@ -29,21 +29,21 @@ pip install -r requirements.txt
 ## How to run locally
 ```bash
 # Clone the repo
-git clone https://github.com/gswack/my-ci-cd-pipeline.git
-cd my-ci-cd-pipeline
+git clone https://github.com/gswack/test-automation-framework.git
+cd test-automation-framework
 
 # Run the Python app
 python main.py
 
 # Build Docker image
-docker build -t gswack/my-ci-cd-pipeline .
+docker build -t gswack/test-automation-framework
 
 # Run container locally
-docker run -p 5000:5000 gswack/my-ci-cd-pipeline
+docker run -p 5000:5000 gswack/test-automation-framework
 ```
 
 ## Project Structure
-my-ci-cd-pipeline/
+test-automation-framework/
 ├── app/  
 │   └── main.py
     └── routes.py
