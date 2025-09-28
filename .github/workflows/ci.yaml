@@ -32,9 +32,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd /home/ubuntu/
-          mkdir gitrep
           cd gitrep/
-          git clone https://github.com/gswack/test-automation-framework.git
           cd test-automation-framework/
           git pull
           python3 -m venv venv
