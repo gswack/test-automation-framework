@@ -1,0 +1,22 @@
+body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; } h1 { text-align: center; } .section { margin-bottom: 40px; } .build-list { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .build-item { border-bottom: 1px solid #ddd; padding: 10px 0; } .build-item:last-child { border-bottom: none; } .status-success { color: green; } .status-failure { color: red; } .status-in_progress { color: orange; }
+CI/CD Dashboard
+GitHub Actions
+{% for run in github %}
+{{ run.name }}
+Status: {{ run.status }}
+Conclusion: {{ run.conclusion or "N/A" }}
+Created At: {{ run.created_at }}
+{% else %}
+No GitHub Actions data available.
+
+{% endfor %}
+Jenkins Builds
+{% for build in jenkins %}
+Build #{{ build.number }}
+Result: {{ build.result }}
+{{ build.url }}View Build
+Timestamp: {{ build.timestamp }}
+{% else %}
+No Jenkins build data available.
+
+{% endfor %}
