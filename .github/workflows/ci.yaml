@@ -31,10 +31,12 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          sudo -i
           cd /home/ubuntu/
           cd gitrep/
           cd test-automation-framework/
           git pull
+          rm -rf venv
           python3 -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
