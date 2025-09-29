@@ -1,6 +1,8 @@
 FROM python:3.11-slim
 WORKDIR /app
-COPY app/main.py .
-RUN pip install flask
+COPY requirements.txt .
+COPY . .
+COPY app/ .
+RUN pip install -r requirements.txt
 EXPOSE 8080
 CMD ["python", "main.py"]
