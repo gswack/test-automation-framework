@@ -19,7 +19,7 @@ def not_found(e):
 @app.errorhandler(500)
 def internal_error(e):
     return "Internal server error", 500
-    
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

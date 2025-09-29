@@ -1,3 +1,7 @@
+# Test Automation Framework
+
+![CI](https://github.com/gswack/test-automation-framework/actions/workflows/ciomation framework...
+
 ## Overview
 A Python-based web application demonstrating scalable development and modern DevOps practices. It leverages Docker for infrastructure-as-code and GitHub Actions for automated CI/CD pipelines.
 
@@ -21,16 +25,15 @@ Before running the application, make sure you have the following installed:
 - Docker
 - pip
 
-### Install Python dependencies
-```bash
-pip install -r requirements.txt
-```
-
-## How to run locally
+## Setup Instructions 
 ```bash
 # Clone the repo
 git clone https://github.com/gswack/test-automation-framework.git
 cd test-automation-framework
+pip install -r requirements.txt 
+
+# Run Tests
+pytest
 
 # Run the Python app
 python main.py

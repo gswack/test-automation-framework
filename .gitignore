@@ -1,2 +1,6 @@
 test-report.zip
 kopskey.pem
+github-actions-key.pem
+tests/__pycache__/test_main.cpython-311-pytest-8.4.2.pyc
+tests/__pycache__/conftest.cpython-311-pytest-8.4.2.pyc
+.coverage

@@ -1,8 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun September 28 2025
+
+@author: gswack
+"""
+
 import requests
 from requests.auth import HTTPBasicAuth
 
 
-def get_jenkins_builds():
+def get_jenkins_builds() -> list:
     jenkins_url = "http://your-jenkins-url/job/your-job-name/api/json"
     username = "gswack"
     token = "your-api-token"
