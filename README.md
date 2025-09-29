@@ -1,5 +1,5 @@
 # Test Automation Framework
-
+!codecov
 ![CI](https://github.com/gswack/test-automation-framework/actions/workflows/ciomation framework...
 
 ## Overview
@@ -30,11 +30,15 @@ Before running the application, make sure you have the following installed:
 # Clone the repo
 git clone https://github.com/gswack/test-automation-framework.git
 cd test-automation-framework
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt 
-
 # Run Tests
 pytest
-
+# Run Linting
+flake8 .
+# Run Converate Report
+pytest --cov=app --cov-report=xml --cov-report=term
 # Run the Python app
 python main.py
 
